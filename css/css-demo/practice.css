@@ -11,4 +11,4 @@ margin-top: 5px;}
 	background: #ff0000;
 } 
 
-body section p {color: teal;}
+section > p {color: teal;}
