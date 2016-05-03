@@ -1,0 +1,29 @@
+header{
+  background-color: blue;
+}
+
+.column-1{
+  background-color: green;
+  display: inline-block;
+  max-width: 49%;
+
+}
+
+.column-2{
+  background-color: red;
+  display: inline-block;
+  max-width: 49%;
+  vertical-align: top;
+  padding-bottom: 135px;
+}
+
+footer{
+  background-color: yellow;
+  margin-top: 20px;
+}
+
+article {
+  color: white;
+  font-family: fantasy;
+  font-size: 1em;
+}
