@@ -1,0 +1,27 @@
+Release 0: Equip Your New Robot
+
+- Locate the button and press the arrow going up by the elevator
+- Wait for the elevator door to open
+- Walk into the elevator
+- Locate the buttons inside the elevator (either left or right side)
+- Press the floor # you would like to go
+- wait for elevator door to close
+- Elevator will go to the floor # pressed
+- If elevator stops before your floor wait for the door to close again.
+- Elevator will continue to the floor # pressed
+- Once arrived the doors will open for you to get off
+
+Morning routine
+
+- Wake up around 9-9:30am
+- unplug my iphone from the charger
+- Text girlfriend
+  - "Good Morning, babe! :)"
+- Go use the bathroom and go back to bed to watch some Game of Thrones
+- Get up again by 10:30am
+- Brush your teeth
+- Go downstairs and make yourself 3 eggs,hash brown,bacon with coffee and bannana
+- Next take a shower
+- Dry yourself with a towel
+- Get Dressed
+- Start working on DBC assignments before noon
