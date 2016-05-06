@@ -1,3 +1,18 @@
+#PSEUDOCODE
+#1.define a method such that it takes in a string and 
+#as long as the index is less than the length of the string,
+#return the next character
+#2.Same as first, but going backwards. Use alphabet string that was given
+#find position of the string character in the alphabet and return the letter
+#of 1 character before it
+
+
+
+
+
+
+
+
 def encrypt(string)
 	idx=0
 	while idx<string.length
