@@ -29,3 +29,7 @@ if user_input == "e"
 elsif user_input == "d"
   puts "decrypted #{decrypt(password)}"
 end
+
+
+# Nested call method works like math, you work your way
+# out starting from inside first. 
