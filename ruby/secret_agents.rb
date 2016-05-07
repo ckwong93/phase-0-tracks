@@ -19,15 +19,3 @@ def decrypt(hello)
     index += 1
   end
 end
-
-
-puts "Would you like to decrypt (d) or encrypt (e) a password?"
-user_input = gets.chomp.to_s
-puts "Enter password"
-password = gets.chomp.to_s
-
-if user_input == "e"
-  puts "encrypted #{encrypt(password)}"
-elsif user_input == "d"
-  puts "decrypted #{decrypt(password)}"
-end
