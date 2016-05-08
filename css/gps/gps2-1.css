@@ -1,0 +1,23 @@
+body {width:600px;}
+
+header {text-align:center;
+        background-color:black;
+        color:white;}
+
+.column-1 {width:270px;
+            float:left;
+            text-align:center;
+            display:block;
+            font-family:"Comic Sans MS";
+            border-style:solid;}
+.column-2 {width:270px;
+            float:right;
+           text-align:center;
+           display:block;
+           font-family:Trebuchet MS;
+           border: 1px solid green}
+           
+footer {float:left;
+        text-align:center;
+        background-color:black;
+        color:white;}           
