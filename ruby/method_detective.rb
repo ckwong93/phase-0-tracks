@@ -17,10 +17,10 @@
 "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
-"the usual".insert(9," suspects")
+"the usual".concat(" suspects")
 #=> "the usual suspects"
 
-" suspects".insert(0,"the usual")
+" suspects".prepend("the usual")
 # => "the usual suspects"
 
 "The case of the disappearing last letter".chop
