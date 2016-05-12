@@ -1,5 +1,5 @@
 #Release 0
-=begin
+
 def iteration
   name1 = "Audrey"
   name2 = "Anish"
@@ -8,7 +8,8 @@ def iteration
 
 end
 iteration { |name1, name2| puts "#{name1} and #{name2} come and learn!" }
-=end
+
+#Release 1
 
 # this is an array
 
@@ -22,6 +23,7 @@ upscale_cars = {
   "Day 3" => "Maserati",
   "Day 4" => "Aston Martin"
 }
+
 # this is .each for an array
 
 puts "Before .each call:"
@@ -58,3 +60,44 @@ upscale_cars.delete("Day 1")
 
 puts "After .each call:"
 p upscale_cars
+
+#Release 2
+
+array = [ 1, 2, 3, 4, 5]
+
+hash = {
+  "a" => 1,
+  "b" => 2,
+  "c" => 3,
+  "d" => 4,
+  "e" => 5
+}
+
+#Running conditions through an array
+
+array.delete_if {|num| num < 3}
+p array
+
+array.keep_if {|num| num > 3}
+p array
+
+array.select! { |num| num.even? }
+p array
+
+array.reject! {|num| num > 2}
+p array
+
+
+#Running conditions through hash
+
+hash.delete_if{|x, y| y < 2}
+puts hash
+
+hash.keep_if{|x, y| y < 3}
+puts hash
+
+hash.select!{|x, y| y > 2}
+puts hash
+
+hash.reject!{|x, y| y > 3}
+puts hash
