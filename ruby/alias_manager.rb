@@ -28,7 +28,6 @@ new_alias.join("").split.map { |x| x.capitalize}.join("")
 end
 
 nickname_hash = {}
-
 # user input
 
 user_input = ""
