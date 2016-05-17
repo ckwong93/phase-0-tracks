@@ -102,4 +102,3 @@ end
 #This goes through each object in Soldier class and performs the instance method for soldier_counter and united_soldiers
 
 
-
