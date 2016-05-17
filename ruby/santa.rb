@@ -76,4 +76,4 @@ santas.each do |santa|
 	santas_age=rand(150) 
 	puts "Santa's ethnicity is #{example_ethnicities.sample}, Santa's gender is #{example_genders.sample}, and Santa's age is #{santas_age}"
 end
-
+end
