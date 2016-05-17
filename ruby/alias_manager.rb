@@ -16,19 +16,28 @@ def alias_name(name)
   nickname_split=name.split("")
   nickname_split.map! do |x|
     if vowels.include?(x)
-      new_alias << vowels[vowels.index(x)+1]
+      if x == "u"
+        new_alias << "a"
+      else
+        new_alias << vowels[vowels.index(x)+1]
+      end
     elsif consonants.include?(x)
-      new_alias << consonants[consonants.index(x)+1]
-    else
-      puts ""
+      if x == "z"
+        new_alias << "b"
+      else
+        new_alias << consonants[consonants.index(x)+1]
+      end
+    elsif x == " "
+        new_alias << x
     end
   end
 
-new_alias.join("").split.map { |x| x.capitalize}.join("")
+  new_alias.join("").split(" ").map(&:capitalize).join(" ")
 end
 
 nickname_hash = {}
 # user input
+#
 
 user_input = ""
 puts "Would you like to go incognito?"
