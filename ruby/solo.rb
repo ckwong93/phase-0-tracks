@@ -5,8 +5,10 @@
 
 class Dragon
 
-	attr_accessor :name,:color,:age
-	#allows for getter/setter for all 3 attributes
+	attr_reader :name, :age
+	#name and age are reader because we don't want to change values later on
+	attr_accessor :color
+	#these dragons can change color based on the season, so we should set them as accessors(in case we update their color)
 
 	def initialize(name,color,age)
 		@name = name
@@ -36,9 +38,7 @@ dragon.territory("Alaska")
 =end 
 #driver code to test that all of the methods work
 
-dragon_name_array=[]
-dragon_color_array=[]
-dragon_age_array=[]
+dragon_array=[]
 #These 3 arrays will store data from UI
 dragons=[]
 #This will store the class instances we've created
@@ -47,31 +47,35 @@ continue=""
 
 until continue == "no"
 	p "Name your dragon. (type 'exit' to leave)"
-		dragon_name = gets.chomp
-			dragon_name_array << dragon_name
+		dragon_name = gets.chompß
+			dragon_array << dragon_name
 
 	p "Color your dragon"
 		dragon_color = gets.chomp
-			dragon_color_array << dragon_color
+			dragon_array << dragon_color
 
 	p "Age your dragon"
 		dragon_age=gets.chomp
-			dragon_age_array << dragon_age
+			dragon_array << dragon_age
+
+	dragons << Dragon.new(dragon_name,dragon_color,dragon_age)
+#instantiates the dragon after attributes have been defined
 
 	p "Want to create another dragon? Type 'yes' or 'no'"
 		continue=gets.chomp
 end
 
 
-dragon_name_array.length.times do |i|
-		dragons << Dragon.new(dragon_name_array[i],dragon_color_array[i],dragon_age_array[i])
-end
+
 #looks at dragon_name_array and for each element, it will create an instance in the Dragon class using UI info
 
 
 ObjectSpace.each_object Dragon do |obj|
 		obj.biography
+		obj.breathe_fire
+		obj.territory("California")
 end
 #Allows us to run a method for each object that we stored. In this case we are using biography so we can see
 #all of the data that we stored above
+
 
