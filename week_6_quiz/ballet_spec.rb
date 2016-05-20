@@ -26,18 +26,27 @@ describe Dancer do
 
   it "can add parters to the dance card queue" do
     dancer.queue_dance_with("Mikhail Baryshnikov")
-     expect(dancer.card).to eq ["Mikhail Baryshnikov"]
+      expect(dancer.card).to eq ["Mikhail Baryshnikov"]
 
     dancer.queue_dance_with("Anna Pavlova")
-     expect(dancer.card).to eq ["Mikhail Baryshnikov", "Anna Pavlova"]
+      expect(dancer.card).to eq ["Mikhail Baryshnikov", "Anna Pavlova"]
   end
 
   it "can start the next dance in the queue" do
     dancer.queue_dance_with("Mikhail Baryshnikov")
-     dancer.queue_dance_with("Anna Pavlova")
+    dancer.queue_dance_with("Anna Pavlova")
 
     expect(dancer.begin_next_dance).to eq "Now dancing with Mikhail Baryshnikov."
-     expect(dancer.card).to eq ["Anna Pavlova"]
+    expect(dancer.card).to eq ["Anna Pavlova"]
   end
-  
+
+  it "can count how many dancers are in the queue" do
+    dancer.queue_dance_with("Mikhail Baryshnikov")
+    dancer.queue_dance_with("Anna Pavlova")
+    dancer.queue_dance_with("Chance The Rapper")
+
+    expect(dancer.queue_counter) .to eq "3 dancer(s) remain in the queue. Please sign up soon if you would like to dance"
+  end
+
+
 end

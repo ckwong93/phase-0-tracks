@@ -38,9 +38,13 @@ attr_accessor :age
 	end
 
 	def begin_next_dance
-		"Now dancing with #{@dance_list[0]}"
-		@dance_list.delete_at[0]
+		p "Now dancing with #{@dance_list[0]}."
+		@dance_list.delete_at(0)
 	end
 
+#Returns a phrase that counts how many people are in the dance list queue
+	def queue_counter
+		"#{@dance_list.count} dancer(s) remain in the queue. Please sign up soon if you would like to dance"
+	end
 
 end
