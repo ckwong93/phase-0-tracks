@@ -1,0 +1,19 @@
+Elevator Algorithm:
+	For each floor number, ask the human if it is the floor they wish to elevate to.
+	Until floor number is confirmed, continue iterating through each floor number
+	When floor number is confirmed, press button corresponding to the selected number
+	If all floor numbers are iterated and none are confirmed, terminate human
+
+Good-Morning/Night Text:
+	1.Check to see if there is any text activity between 7AM-9AM
+	2.If there are no outbound messages sent from my phone during this time, randomly select and send one of the messages to Joanna (girlfriend)
+		2a. Good morning babe!
+		2b. Goooooood Morning!
+		2c. Hello, have a great morning!
+		2d. Hi qtpie, good morning!!!
+	3. If there are outbound messages sent from my phone during this time, do not perform any actions.
+	4. Pause program until 11PM, unpause at 11:01PM
+	5. Check to see if there is any text activity between 11PM-2AM
+	6. If there are no outbound messages sent during this time, randomly select and send one of the messages from 2a-2d, replacing "morning" with "night"
+	8. If there are outbound messages, do not perform any actions
+	7. End program until 6:59AM

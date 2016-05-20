@@ -1,0 +1,64 @@
+blockquote {
+  border-left: 5px solid blue;
+  padding: 15px;
+  margin-left: 0px;
+}
+
+cite {
+  display: block;
+  margin-top: 10px;
+}
+
+#body {max-width: 960px;
+  
+}
+
+#external-links {
+  display: inline-block;
+  vertical-align: text-top;
+  list-style-type: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 20%;
+  
+}
+
+#main {
+  display: inline-block;
+  vertical-align: text-top;
+  width: 78%;  
+
+}
+* you're welcome to edit the
+image, figure, and figcaption CSS if you'd like, 
+but it's optional! */
+img {
+  width: 100%;
+}
+
+figure {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+figcaption {
+  font-style: italic;
+  text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  body{
+    font-size: 10px;
+  }
+
+  img{ height: 50%;
+          width: 50%; }
+}
+  
+}
+
+Release 3
+1. You can center the page by using text-align center. For images, you can set display to block, set margin-left and margin-right to auto. By doing that, the image will automatically center.
+2. Mobile-first design is when a website is designed to be visually appealing and focused on mobile. Think mobile-version sites.
+3. Float allows us to move elements to stay in the left, right, inital, and inherit positions
+4.
