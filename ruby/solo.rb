@@ -20,7 +20,21 @@ class Pizza
     @toppings = []
   end
 
-  def pick_up_order_type
+  def crust
+    puts "What type of crust would you like? (Pan, Thin, or Deep Dish)"
+    @crust = gets.chomp.to_s.capitalize
+  end
+
+  def toppings
+		p "Type 'done' when finished picking toppings."
+		puts "Vegetables: Green peppers, Mushrooms, Onions, Olives, Broccoli
+    Meats:Bacon, Beef, Chicken, Ham, Pepperoni "
+    until (@toppings == "done") do
+    @toppings = gets.chomp.to_s.downcase
+    end
+  end
+
+	def pick_up_order_type
     client_info = {}
     puts "Delivery or pickup"
     order = gets.chomp.to_s.downcase
@@ -50,27 +64,16 @@ class Pizza
       number = gets.chomp.to_i
       client_info[:PhoneNumber] = number
 
+		  print "Client Information"
+		  puts "-------------------"
+		  puts ""
+		  client_info.each {|x, y| puts "#{x}:#{y}"}
+
     else
       print "Your order will be ready 30 mins!"
     end
   end
 
-  def crust
-    puts "What type of crust would you like? (Pan, Thin, or Deep Dish)"
-    @crust = gets.chomp.to_s.capitalize
-  end
-
-  def toppings(toppings)
-    toppings =""
-    until @toppings != "done"
-    p "Type 'done' when finished picking toppings."
-    puts "Vegetables: Green peppers, Mushrooms, Onions, Olives, Broccoli
-    Meats:Bacon, Beef, Chicken, Ham, Pepperoni "
-    @toppings = gets.chomp.to_s.capitalize
-    @toppings = toppings
-    end
-    return toppings
-  end
 
   def print_order(client_info)
     print "Client Information"
@@ -83,4 +86,4 @@ end
 
 pizza_order = Pizza.new
 pizza_order.pick_up_order_type
-pizza_order.toppings(@toppings)
+pizza_order.toppings
