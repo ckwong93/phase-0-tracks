@@ -1,7 +1,7 @@
 #Release 0:Design a class
 # - Write three attributes
 # - Write 3 methods, at least one that takes an arugment
-
+#
 system "clear"
 
 def title
