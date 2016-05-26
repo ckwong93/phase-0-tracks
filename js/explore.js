@@ -4,11 +4,13 @@
 //This will store each value into the string and return a reversed string
 
 function reverse(string){
+//set reversedString as empty string (to store data later)
 	var reversedString="";
-	var newString=reversedString;
+//loops through each letter in string and adds new letters to beginning of reversedString
 for (var i = 0; i < string.length; i++ ) {
 	reversedString=string[i]+reversedString;
 }
+//prints reversedString after loop is complete
 console.log (reversedString);
 }
 
