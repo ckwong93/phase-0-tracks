@@ -104,3 +104,7 @@ for (var i=0; i<10; i++){
 }
 //line 102 will look at the new_arr and spit out the longest word
 //loop will occur 10 times and spit out the longest word every time
+
+
+//RESOURCE USED AS AID TO RANDOM GENERATOR SYNTAX
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
