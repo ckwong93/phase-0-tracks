@@ -4,44 +4,51 @@
 # We spent [#] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+#require-used for libraries
+#require_relative- used for created file
 require_relative 'state_data'
 
 class VirusPredictor
 
+#Initialize will state key data
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+#Will perform predicted_deaths and speed_of_spread methods
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+#Takes in data and outputs how many people will die from the outbreak
+  def predicted_deaths
     # predicted deaths is solely based on population density
-    if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
-    elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
-    elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
-    elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
-    else
-      number_of_deaths = (@population * 0.05).floor
+    
+    case @population_density
+
+    when @population_density >= 200
+      deaths = (@population * 0.4).floor
+    when @population_density >= 150
+      deaths = (@population * 0.3).floor
+    when @population_density >= 100
+      deaths = (@population * 0.2).floor
+    when @population_density >= 50
+      deaths = (@population * 0.1).floor
+    else 
+      deaths = (@population * 0.05).floor
     end
 
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
+    print "#{@state} will lose #{deaths} people in this outbreak"
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+#Takes in data and outputs how fast the disease will spread
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -82,6 +89,10 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
+STATE_DATA.each do |name,state_data|
+  state = VirusPredictor.new(name,state_data[:population_density],state_data[:population])
+  state.virus_effects
+end
 
 #=======================================================================
 # Reflection Section
