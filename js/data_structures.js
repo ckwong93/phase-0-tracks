@@ -22,3 +22,18 @@ function printing_objects(color) {}
        }
 
 console.log(printing_objects);
+
+function cars(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+
+var newcar = new cars("Toyota", "Camry", 1996)
+console.log('Your new car is' + " " + newcar.make + " " +newcar.model + " "+newcar.year + ".");
+
+var newcar1 = new cars("Honda", "Accord", 2010)
+console.log('Your new car is' + " " + newcar1.make + " " +newcar1.model + " "+newcar1.year+ ".");
+
+var newcar2 = new cars("Lexus", "IS300", 2014)
+console.log('Your new car is' + " " + newcar2.make + " " +newcar2.model + " "+newcar2.year+ ".");
