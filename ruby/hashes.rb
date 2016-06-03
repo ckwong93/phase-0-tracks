@@ -1,87 +1,76 @@
-# Getting Client's Information
+=begin
+-Prompt the user for all the infomation
+-convert any user input to the appropriate date type
+-print hash back out to the screen
+-give user a chance to update infomation
+=end
 
 system "clear"
+
 client_info = {}
 
-def title
-	puts title = "Interior Design Questions"
-	puts "-------------------------"
-end
+#Client's info
+puts "***************"
+puts "Client's' Info"
+puts "***************"
 
-
-
-title
-
-puts "Hello, please type your name:"
+puts "Client's name: "
 name = gets.chomp.to_s.capitalize
-client_info[:User] = name
+client_info[:Name] = name
 
-
-puts "What's your age?"
+puts "Client's age: "
 age = gets.chomp.to_i
 client_info[:Age] = age
 
-puts "How many children do you have?"
-children = gets.chomp.to_s
-client_info[:Kids] = children
+puts "Number of children: "
+children = gets.chomp.to_i
+client_info[:Children] = children
 
-puts "Lastly, what decor theme would you like? (Modern, Country, Rustic, Contemporary)"
-decor = gets.chomp.to_s.capitalize
-client_info[:Theme] = decor
+puts "Decor theme: (Modern, Country, Rustic, Contemporary) "
+theme = gets.chomp.to_s.capitalize
+client_info[:Decor] = theme
 
+#print info
 
-print "Client Information"
-puts ""
-client_info.each {|x, y| puts "#{x}:#{y}"}
-puts ""
+client_info.each { |x,y| puts "#{x}:#{y}"  }
 
-#update changes if needed
+#update client info
 
-puts ""
+puts "*********************"
+puts "Update Client's Info"
+puts "*********************"
 
+update = ""
+while update != "done" do
 
-	puts "Type the item that needs to be changed (name, age, children, decor). If
-	nothing needs to be changed please type 'none'."
-	update = gets.chomp.to_s.downcase
+puts "Would you like to make any updates/change?? (name,age,children,theme) If you have nothing to
+change please type 'done'.Thanks!"
+update = gets.chomp
 
-	while update !="none" do
+  if update == "name"
+    puts "Client's Name: "
+    update_name = gets.chomp.to_s.capitalize
+    client_info[:Name]= update_name
 
-	if update == "name"
-	  puts "Update your name if needed:"
-	  name = gets.chomp.to_s
-	  client_info[:User] = name
-		puts ""
+  elsif update == "age"
+    puts "Client's Age: "
+    update_age = gets.chomp.to_i
+    client_info[:Age]= update_age
 
-	elsif update == "age"
-	  puts "Update your age"
-	  age = gets.chomp.to_i
-	  client_info[:Age] = age
-		puts ""
+  elsif update == "children"
+    puts "Number of Chldren: "
+    update_children = gets.chomp.to_i
+    client_info[:Children]= update_children
 
-	elsif update == "children"
-	  puts "Update, how many children you have"
-	  children = get.chomp.to_i
-	  client_info[:Kids] = children
-		puts ""
+  elsif update == "theme"
+    puts "Decor: (Modern, Country, Rustic, Contemporary)"
+    update_theme = gets.chomp.to_s.capitalize
+    client_info[:Decor]= update_theme
 
-	elsif update == "decor"
-	  puts "Have you changed you mind on your decor theme? If so, tell us which one you prefer (Modern, Country, Rustic, Contemporary)."
-	  decor = gets.chomp.to_s
-	  client_info[:Theme] = decor
-		puts ""
+  else
+    puts "Your info as been updated. Talk to you soon!"
 
-	else
-	  puts "Thanks! Have a great day!"
-	end
+    end
+  end
 
-	puts "Type the item that needs to be changed (name, age, children, decor). If nothing needs to be changed please type 'none' or 'no'."
-	update = gets.chomp.to_s.downcase
-
-	puts ""
-	print "Client Information"
-	puts ""
-	client_info.each {|x, y| puts "#{x}:#{y}"}
-
-
-
-end
+  client_info.each { |x,y| puts "#{x}:#{y}"  }
