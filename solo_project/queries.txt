@@ -1,1 +1,25 @@
-SELECT * FROM cars;UPDATE cars SET year_made=2015 WHERE car_model="Corolla";SELECT * FROM cars, car_brands WHERE cars.brand_id=car_brands.id;SELECT cars.car_model,cars.price,car_brands.brand_name FROM cars JOIN car_brands ON cars.brand_id=car_brands.id;DELETE FROM cars WHERE price="10000";
+SELECT * FROM cars;
+
+UPDATE cars SET year_made=2015 WHERE car_model="Corolla";
+
+SELECT * FROM cars, car_brands WHERE cars.brand_id=car_brands.id;
+
+SELECT cars.car_model,cars.price,car_brands.brand_name FROM cars JOIN car_brands ON cars.brand_id=car_brands.id;
+
+DELETE FROM cars WHERE price="10000";
+
+
+
+
+
+SELECT car_model,year_made,brand_id FROM cars INNER JOIN car_brands ON cars.brand_id =car_brands.id;
+
+
+
+
+
+SELECT car_model, year_made,brand_id FROM cars CROSS JOIN car_brands;
+
+
+
+
