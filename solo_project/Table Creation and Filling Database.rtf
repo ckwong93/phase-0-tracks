@@ -1,0 +1,23 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;\f1\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\margl1440\margr1440\vieww28960\viewh15900\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf0 \CocoaLigature0 CREATE TABLE car_brands(id INTEGER PRIMARY KEY, brand_name VARCHAR(255));
+\f1\fs24 \CocoaLigature1 \
+
+\f0\fs22 \CocoaLigature0 CREATE TABLE cars(id INTEGER PRIMARY KEY, car_model VARCHAR(255), year_made INTEGER, price INTEGER, brand_id INTEGER, FOREIGN KEY (brand_id) REFERENCES car_brands(id));\
+INSERT INTO car_brands(brand_name) VALUES ("VW");\
+INSERT INTO car_brands(brand_name) VALUES ("Toyota");\
+INSERT INTO car_brands(brand_name) VALUES ("Honda");\
+INSERT INTO car_brands(brand_name) VALUES ("Tesla");\
+INSERT INTO car_brands(brand_name) VALUES ("BMW");\
+INSERT INTO cars(car_model,year_made,price,brand_id) VALUES("GTI",2016,27000,1);\
+INSERT INTO cars(car_model,year_made,price,brand_id) VALUES("Corolla",2016,17000,1);\
+INSERT INTO cars(car_model,year_made,price,brand_id) VALUES("Civic",2013,16500,3);\
+INSERT INTO cars(car_model,year_made,price,brand_id) VALUES("Odyssey",2003,10000,3);\
+INSERT INTO cars(car_model,year_made,price,brand_id) VALUES("3 Series",2001,15000,5);\
+INSERT INTO cars(car_model,year_made,price,brand_id) VALUES("Model S",2015,78000,4);\
+INSERT INTO cars(car_model,year_made,price,brand_id) VALUES("Model X",2016,120000,4);\
+UPDATE cars SET brand_id=2 WHERE car_model="Corolla";}
