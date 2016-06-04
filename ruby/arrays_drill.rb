@@ -1,46 +1,41 @@
-def build_array(item1, item2, item3)
-  main_array = []
-  main_array << item1
-  main_array << item2
-  main_array << item3
-  return main_array
+#Release 2
+def grocery(x, y, z)
+  list = []
+  list << x
+  list << y
+  list << z
+  return list
 end
+
+p grocery(4, 5, 6)
 
 def add_to_array(array1, add_item)
   array1 << add_item
   return array1
 end
 
-
-#list of items
-grocery_list = []
-grocery_list << "Milk"
-grocery_list << "Eggs"
-grocery_list << "Bacon"
-grocery_list << "Spinach"
-grocery_list << "Ice Cream"
-
-p grocery_list
-
-#deleting item at index 2
-p grocery_list.delete_at(2)
-
-p grocery_list
-
-p grocery_list.insert(2,"Turkey Bacon")
-
-p grocery_list.shift
-
-p grocery_list.include?("Radishes")
-
-more_items = ["Cereal", "Pizza", "Orange Juice"]
-
-complete_list =  grocery_list + more_items
-
-p complete_list
-
-p build_array(5,6,0)
-
 p add_to_array([],"something")
 
-p add_to_array(complete_list, "Coffee")
+#Release 1
+
+array = []
+p array
+
+array.push("Green beans", "Eggs", "French Onion", "pasta","tomato")
+p array
+
+array.delete_at(2)
+p array
+
+array.insert(2, "hot sauce")
+p array
+
+array.shift
+p array
+
+p "Does this include eggs?"
+p array.include?("Eggs")
+
+array_two = %w[cheese yogurt milk salt]
+combine = array.concat(array_two)
+p combine
