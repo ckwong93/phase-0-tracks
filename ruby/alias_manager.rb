@@ -1,64 +1,27 @@
-
-#Ask user for input
-#Save vowels and consonants
-#Swap first and last name
-# Get translated code into a new array
-#Add a hash
-
 system "clear"
-
-# Going through vowels and consonants
-
-def alias_name(name)
-  new_alias =[]
+=begin
+def full_name
+	puts "What's your first name?"
+	first_name = gets.chomp
+	puts "What's your last name?"
+	last_name = gets.chomp
+	p "#{last_name}, #{first_name}"
+end
+=end
+#create an array
+# Next, changing vowels and consonants to the next letter
+def changing_letters(name)
+  nickname = []
   vowels = "aeiou"
   consonants = "bcdfghjklmnpqrstvwxyz"
-  nickname_split=name.split("")
-  nickname_split.map! do |x|
-    if vowels.include?(x)
-      if x == "u"
-        new_alias << "a"
-      else
-        new_alias << vowels[vowels.index(x)+1]
-      end
-    elsif consonants.include?(x)
-      if x == "z"
-        new_alias << "b"
-      else
-        new_alias << consonants[consonants.index(x)+1]
-      end
-    elsif x == " "
-        new_alias << x
+  changing_names = name.split("")
+  changing_names.map! do |var|
+    if vowels.include?(var)
+      nickname << vowels[vowels.index(var)+1]
+    elsif consonants.include?(var)
+      nickname << consonants[consonants.index(var)+1]
     end
   end
-
-  new_alias.join("").split(" ").map(&:capitalize).join(" ")
-end
-
-nickname_hash = {}
-# user input
-#
-
-user_input = ""
-puts "Would you like to go incognito?"
-user_input = gets.chomp.to_s.downcase
-
-until user_input == "no" || user_input == "maybe"
-
-  puts "What's your full name?"
-  full_name = gets.chomp.to_s.downcase
-  name = full_name
-  puts "Here is your alias:   " + alias_name(name)
-
-  puts "Did you like your alias name?"
-  nickname = gets.chomp
-
-  nickname_hash[full_name.capitalize] = alias_name(name)
-  puts "Would you like to go incognito again?"
-  user_input = gets.chomp.to_s.downcase
-
-end
-
-nickname_hash.each do |name,nickname|
-	puts "True identity of #{nickname} is #{name}. This message will self destruct in 5..4..3..2..1 BOOM!"
-end
+  nickname.join("")
+  end
+puts changing_letters("anish")
