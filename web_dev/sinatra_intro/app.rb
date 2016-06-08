@@ -44,3 +44,53 @@ get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
 end
+
+#write /contact route that displays an address
+get '/contact' do
+  "123 Main Street<br>
+  San Francisco, CA 94112<br>"
+end
+
+#write /great_job route that can take a person's name as a query parameter (not a route parameter) and say "Good job, [person's name]!". 
+#If the query parameter is not present, the route simply says "Good job!"
+get '/great_job' do
+  first_name=params[:first_name]
+  last_name=params[:last_name]
+  if first_name && last_name
+    "Good job, #{first_name} #{last_name}!"
+  else
+    "Good job!"
+  end
+end
+
+#A route that uses route parameters to add two numbers and respond with the result. 
+#The data types are tricky here -- when will the data need to be (or arrive as) a string?
+get '/add/:first_num&:second_num' do
+    first_num=params[:first_num]
+    second_num=params[:second_num]
+    sum_num=first_num.to_i + second_num.to_i
+    "#{sum_num}"
+end
+
+get '/subtract/:first_num&:second_num' do
+    first_num=params[:first_num]
+    second_num=params[:second_num]
+    sub_num=first_num.to_i - second_num.to_i
+    "#{sub_num}"
+end
+
+get '/multiply/:first_num&:second_num' do
+    first_num=params[:first_num]
+    second_num=params[:second_num]
+    mult_num=first_num.to_i * second_num.to_i
+    "#{mult_num}"
+end
+
+get '/divide/:first_num&:second_num' do
+    first_num=params[:first_num]
+    second_num=params[:second_num]
+    div_num=first_num.to_f / second_num.to_f
+    "#{div_num}"
+end
+
+
