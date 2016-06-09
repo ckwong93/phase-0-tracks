@@ -17,6 +17,13 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/students/remove' do
+	erb :remove_student
+end
+
+get '/students/update' do
+	erb :update_student
+end
 # create new students via
 # a form
 post '/students' do
@@ -24,4 +31,14 @@ post '/students' do
   redirect '/'
 end
 
+post '/students/remove' do
+  db.execute("DELETE FROM students WHERE name=?", [params['remove']]);
+  redirect '/'
+end
+
+post '/students/update' do
+  db.execute("UPDATE students SET campus=? WHERE name=?",params['updateCampus'],params['Name'])
+  db.execute("UPDATE students SET age=? WHERE name=?",params['updateAge'],params['Name'])
+  redirect '/'
+end
 # add static resources
